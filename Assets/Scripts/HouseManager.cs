@@ -7,6 +7,7 @@ using UnityEngine;
 public class HouseManager : MonoBehaviour
 {
     public List<GameObject> rooms = new List<GameObject>();//NOT PREFABS!
+
   
 
     public Vector3 pos1, pos2;
@@ -16,7 +17,6 @@ public class HouseManager : MonoBehaviour
     void Awake()
     {
         Shuffle();
-        roomIndex = 0;
         roomIndex = -1;
     }
 
@@ -53,10 +53,14 @@ public class HouseManager : MonoBehaviour
     }
     public void loadOldRoom()
     {
-        roomIndex--;
-        rooms[roomIndex-1].SetActive(true);
-        rooms[roomIndex+1].SetActive(false);
-        Debug.Log("loaded oold");
+        if (roomIndex > 1)
+        {
+            rooms[roomIndex - 1].SetActive(true);
+            rooms[roomIndex + 1].SetActive(false);
+            roomIndex--;
+            Debug.Log("loaded oold");
+        }
+
     }
 
     
