@@ -7,7 +7,8 @@ using UnityEngine;
 public class HouseManager : MonoBehaviour
 {
     public List<GameObject> rooms = new List<GameObject>();//NOT PREFABS!
-  
+
+
 
     public Vector3 pos1, pos2;
 
@@ -16,7 +17,6 @@ public class HouseManager : MonoBehaviour
     void Awake()
     {
         Shuffle();
-        roomIndex = 0;
         roomIndex = -1;
     }
 
@@ -34,31 +34,45 @@ public class HouseManager : MonoBehaviour
         for (int i = 0; i < rooms.Count; i++)
         {
             if (i % 2 == 0)
+            {
                 rooms[i].transform.position = pos1;
+
+            }
             else
+            {
                 rooms[i].transform.position = pos2;
+                rooms[i].transform.eulerAngles += new Vector3(0, 180, 0);
+            }
         }
         rooms[0].SetActive(true);
-        rooms[1].SetActive(true);
+        //rooms[1].SetActive(true);
     }
 
 
 
-    public void loadNewRoom ()
+    public void loadNewRoom()
     {
         roomIndex++;
-        rooms[roomIndex+ 1].SetActive(true);
-        rooms[roomIndex - 1].SetActive(false);
+        rooms[roomIndex + 1].SetActive(true);
+        if (roomIndex != 0)
+        {
+            rooms[roomIndex - 1].SetActive(false);
+        }
         Debug.Log("loaded new");
     }
     public void loadOldRoom()
     {
+        //if (roomIndex > 1)
+        //{
+        if (roomIndex != 0)
+            rooms[roomIndex - 1].SetActive(true);
+        rooms[roomIndex + 1].SetActive(false);
         roomIndex--;
-        rooms[roomIndex-1].SetActive(true);
-        rooms[roomIndex+1].SetActive(false);
-        Debug.Log("loaded oold");
+        Debug.Log("loaded old");
+        //}
+
     }
 
-    
+
 
 }

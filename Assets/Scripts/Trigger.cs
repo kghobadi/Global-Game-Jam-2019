@@ -7,6 +7,8 @@ public class Trigger : MonoBehaviour {
     HouseManager houseManager;
     public bool newRoom = true;
 
+    int colliderBool = 0;
+
     void Start()
     {
         newRoom = true;
@@ -14,12 +16,8 @@ public class Trigger : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
@@ -33,6 +31,7 @@ public class Trigger : MonoBehaviour {
             newRoom = !newRoom;
         }
     }
+
 
     //private void OnTriggerExit(Collider other)
     //{
