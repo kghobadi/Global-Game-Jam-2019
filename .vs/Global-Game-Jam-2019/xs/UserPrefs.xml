@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{276F52E9-C96A-7B88-1C02-110053B090C1}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/julian stuff/starManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CornGen.cs">
     <Files>
       <File FileName="Assets/Scripts/Trigger.cs" Line="30" Column="48" />
       <File FileName="Assets/Scripts/HouseManager.cs" Line="38" Column="1" />
       <File FileName="Assets/easton/setSky.cs" Line="15" Column="9" />
-      <File FileName="Assets/julian stuff/starManager.cs" Line="58" Column="1" />
+      <File FileName="Assets/julian stuff/starManager.cs" Line="55" Column="5" />
+      <File FileName="Assets/Scripts/CornGen.cs" Line="22" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

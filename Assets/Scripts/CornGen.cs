@@ -18,6 +18,8 @@ public class CornGen : MonoBehaviour
         GenerateCorn2();
         GenerateCorn3();
         GenerateCorn4();
+
+        cornParent.transform.position = finalPos;
     }
 
     void GenCorn()
