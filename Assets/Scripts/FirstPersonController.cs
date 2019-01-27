@@ -21,7 +21,7 @@ public class FirstPersonController : MonoBehaviour
     Vector3 movement;
 
     //for footstep sounds
-    public AudioClip[] currentFootsteps;
+    public AudioClip[] currentFootsteps, indoorFootsteps, outsideFootsteps;
     AudioSource playerAudSource;
 
     //dictionary to sort nearby audio sources by distance 
