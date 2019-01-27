@@ -9,6 +9,7 @@ public class DialogueText : MonoBehaviour
     //player refs
     GameObject player;
     FirstPersonController fpc;
+    public GameObject hostObj;
 
     //text component and string array of its lines
     Text theText;
@@ -171,6 +172,7 @@ public class DialogueText : MonoBehaviour
     public void DisableDialogue()
     {
         theText.enabled = false;
+        hostObj.SetActive(false);
     }
 
     //check through our alphabet of sounds and play corresponding character
