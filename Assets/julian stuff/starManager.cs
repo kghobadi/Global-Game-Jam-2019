@@ -55,7 +55,8 @@ public class starManager : MonoBehaviour
 
     private void OnDisable()
     {
-        reticle.SetActive(false);
+        if (reticle != null)
+            reticle.SetActive(false);
     }
 
 }
