@@ -17,7 +17,7 @@ public class HouseManager : MonoBehaviour
     void Awake()
     {
         Shuffle();
-        roomIndex = -1;
+        //roomIndex = -1;
     }
 
     public void Shuffle()
@@ -28,7 +28,7 @@ public class HouseManager : MonoBehaviour
             GameObject temp = rooms[rnd];
             rooms[rnd] = rooms[i];
             rooms[i] = temp;
-            rooms[i].transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Random.ColorHSV();
+            //rooms[i].transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Random.ColorHSV();
         }
 
         for (int i = 0; i < rooms.Count; i++)
@@ -45,34 +45,24 @@ public class HouseManager : MonoBehaviour
             }
         }
         rooms[0].SetActive(true);
-        //rooms[1].SetActive(true);
+        rooms[1].SetActive(true);
     }
-
-
 
     public void loadNewRoom()
     {
         roomIndex++;
-        rooms[roomIndex + 1].SetActive(true);
-        if (roomIndex != 0)
-        {
-            rooms[roomIndex - 1].SetActive(false);
-        }
+        rooms[(roomIndex + 1) % rooms.Count].SetActive(true);
+        //if (roomIndex != 0)
+        rooms[(roomIndex - 1) % rooms.Count].SetActive(false);
+
         Debug.Log("loaded new");
     }
     public void loadOldRoom()
     {
-        //if (roomIndex > 1)
-        //{
-        if (roomIndex != 0)
-            rooms[roomIndex - 1].SetActive(true);
-        rooms[roomIndex + 1].SetActive(false);
+        //if (roomIndex != 0)
+        rooms[(roomIndex - 1) % rooms.Count].SetActive(true);
+        rooms[(roomIndex + 1) % rooms.Count].SetActive(false);
         roomIndex--;
         Debug.Log("loaded old");
-        //}
-
     }
-
-
-
 }

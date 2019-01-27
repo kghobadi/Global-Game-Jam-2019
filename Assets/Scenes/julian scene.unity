@@ -1271,10 +1271,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: julian room 2
       objectReference: {fileID: 0}
-    - target: {fileID: 924788799, guid: c97840a250f314222a5b393c403c97a3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 924788800, guid: c97840a250f314222a5b393c403c97a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5057964
@@ -1317,10 +1313,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924788800, guid: c97840a250f314222a5b393c403c97a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1617302922, guid: c97840a250f314222a5b393c403c97a3, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1663,6 +1655,10 @@ PrefabInstance:
     - target: {fileID: 266470078, guid: 533846a9b140544dfbd52c5541311bc4, type: 3}
       propertyPath: m_Name
       value: julian room 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 266470078, guid: 533846a9b140544dfbd52c5541311bc4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 266470079, guid: 533846a9b140544dfbd52c5541311bc4, type: 3}
       propertyPath: m_LocalPosition.x

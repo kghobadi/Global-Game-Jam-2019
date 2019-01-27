@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{276F52E9-C96A-7B88-1C02-110053B090C1}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/starBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trigger.cs">
     <Files>
-      <File FileName="Assets/Scripts/Trigger.cs" Line="25" Column="41" />
-      <File FileName="Assets/Scripts/HouseManager.cs" Line="71" Column="25" />
-      <File FileName="Assets/starManager.cs" Line="37" Column="10" />
-      <File FileName="Assets/starBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Trigger.cs" Line="22" Column="5" />
+      <File FileName="Assets/Scripts/HouseManager.cs" Line="50" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
