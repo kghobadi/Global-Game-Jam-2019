@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{276F52E9-C96A-7B88-1C02-110053B090C1}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/easton/setSky.cs">
     <Files>
-      <File FileName="Assets/Scripts/Trigger.cs" Line="22" Column="5" />
+      <File FileName="Assets/Scripts/Trigger.cs" Line="30" Column="48" />
       <File FileName="Assets/Scripts/HouseManager.cs" Line="50" Column="5" />
+      <File FileName="Assets/easton/setSky.cs" Line="38" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
