@@ -35,6 +35,7 @@ public class FirstPersonController : MonoBehaviour
     public List<string> audioTags = new List<string>();
 
     public bool moving;
+    public bool isGrabbed;
     
 
     void Start()
@@ -46,74 +47,81 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        //when hold mouse 1, you begin to move in that direction
-        if (Input.GetMouseButton(0))
+        if (!isGrabbed)
         {
-            moving = true;
-            ResetNearbyAudioSources();
-            movement = new Vector3(0, 0, currentSpeed);
-
-
-            footStepTimer -= Time.deltaTime;
-            if (footStepTimer < 0)
+            //when hold mouse 1, you begin to move in that direction
+            if (Input.GetMouseButton(0))
             {
-                PlayFootStepAudio();
-                footStepTimer = footStepTimerTotal;
+                moving = true;
+                ResetNearbyAudioSources();
+                movement = new Vector3(0, 0, currentSpeed);
+
+
+                footStepTimer -= Time.deltaTime;
+                if (footStepTimer < 0)
+                {
+                    PlayFootStepAudio();
+                    footStepTimer = footStepTimerTotal;
+                }
+
+                SprintSpeed();
+            }
+            //move backwards
+            else if (Input.GetMouseButton(1))
+            {
+                moving = true;
+                ResetNearbyAudioSources();
+                movement = new Vector3(0, 0, -currentSpeed);
+                footStepTimer -= Time.deltaTime;
+                if (footStepTimer < 0)
+                {
+                    PlayFootStepAudio();
+                    footStepTimer = footStepTimerTotal;
+                }
+
+                SprintSpeed();
             }
 
-            SprintSpeed();
-        }
-        //move backwards
-        else if (Input.GetMouseButton(1))
-        {
-            moving = true;
-            ResetNearbyAudioSources();
-            movement = new Vector3(0, 0, -currentSpeed);
-            footStepTimer -= Time.deltaTime;
-            if (footStepTimer < 0)
+            //WASD controls
+
+
+            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||
+                Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                PlayFootStepAudio();
-                footStepTimer = footStepTimerTotal;
+                moving = true;
+                float moveForwardBackward = Input.GetAxis("Vertical") * currentSpeed;
+                float moveLeftRight = Input.GetAxis("Horizontal") * currentSpeed;
+                //float moveUpDown = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+                if ((moveForwardBackward != 0 || moveLeftRight != 0) && !playerAudSource.isPlaying)
+                {
+                    PlayFootStepAudio();
+                }
+
+                movement = new Vector3(moveLeftRight, 0, moveForwardBackward);
+
+                SprintSpeed();
+            }
+            //when not moving
+            else
+            {
+                moving = false;
+                movement = Vector3.zero;
+                currentSpeed = walkSpeed;
             }
 
-            SprintSpeed();
-        }
+            movement = transform.rotation * movement;
+            player.Move(movement * Time.deltaTime);
 
-        //WASD controls
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) ||
-            Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            moving = true;
-            float moveForwardBackward = Input.GetAxis("Vertical") * currentSpeed;
-            float moveLeftRight = Input.GetAxis("Horizontal") * currentSpeed;
-            //float moveUpDown = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
-            if ((moveForwardBackward != 0 || moveLeftRight != 0) && !playerAudSource.isPlaying)
+            player.Move(new Vector3(0, -0.5f, 0));
+
+            // quit
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                PlayFootStepAudio();
+                Application.Quit();
             }
 
-            movement = new Vector3(moveLeftRight, 0, moveForwardBackward);
-
-            SprintSpeed();
-        }
-        //when not moving
-        else
-        {
-            moving = false;
-            movement = Vector3.zero;
-            currentSpeed = walkSpeed;
         }
 
-        movement = transform.rotation * movement;
-        player.Move(movement * Time.deltaTime);
-
-        player.Move(new Vector3(0, -0.5f, 0));
-
-        // quit
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
     
     //increases move speed while player is moving over time
