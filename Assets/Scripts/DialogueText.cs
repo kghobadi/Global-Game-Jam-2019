@@ -18,6 +18,7 @@ public class DialogueText : MonoBehaviour
     //current and last lines
     public int currentLine;
     public int endAtLine;
+    public bool hasFinished;
 
     //typing vars
     private bool isTyping = false;
@@ -52,7 +53,9 @@ public class DialogueText : MonoBehaviour
     //animator
     Animator speechAnimator;
 
+    public bool genCorn;
     public CornGen cornGen;
+    public List<RandomizeCorn> cornList = new List<RandomizeCorn>();
 
     void Start()
     {
@@ -103,12 +106,13 @@ public class DialogueText : MonoBehaviour
 
         if (currentLine >= endAtLine)
         {
+            hasFinished = true;
             DisableDialogue();
         }
         else
         {
             //this debug helps find the wait times for the current line of dialogue
-            Debug.Log(hostObj.name + " is on line " + currentLine + " which reads: " + textLines[currentLine] + " -- " + hostObj.name + " will wait " + waitTimes[currentLine].ToString() + "sec before speaking again!");
+            //Debug.Log(hostObj.name + " is on line " + currentLine + " which reads: " + textLines[currentLine] + " -- " + hostObj.name + " will wait " + waitTimes[currentLine].ToString() + "sec before speaking again!");
             StartCoroutine(TextScroll(textLines[currentLine]));
         }
     }
@@ -197,13 +201,29 @@ public class DialogueText : MonoBehaviour
     {
         theText.enabled = false;
 
-        //bring the corn to life...
-        for (int i = 0; i < cornGen.corn.Count; i++)
+        if (hasFinished)
         {
-            cornGen.corn[i].GetComponent<RandomizeCorn>().breatheDistance = 50;
-        }
+            //if we gen
+            if (genCorn)
+            {
+                //bring the corn to life...
+                for (int i = 0; i < cornGen.corn.Count; i++)
+                {
+                    cornGen.corn[i].GetComponent<RandomizeCorn>().breatheDistance = 50;
+                }
+            }
+            //if placed in editor
+            else
+            {
+                //bring the corn to life...
+                for (int i = 0; i < cornList.Count; i++)
+                {
+                    cornList[i].breatheDistance = 50;
+                }
+            }
 
-        hostObj.SetActive(false);
+            hostObj.SetActive(false);
+        }
     }
 
     //check through our alphabet of sounds and play corresponding character

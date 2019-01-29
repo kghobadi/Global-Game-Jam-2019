@@ -1645,11 +1645,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1364339332}
-    - target: {fileID: 781651793475544817, guid: f1881539ab4905b4db48be9e1bb0feaf,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1364339332}
     - target: {fileID: 781651793244192298, guid: f1881539ab4905b4db48be9e1bb0feaf,
         type: 3}
       propertyPath: waitTimes.Array.data[8]
@@ -1670,6 +1665,11 @@ PrefabInstance:
       propertyPath: cornGen
       value: 
       objectReference: {fileID: 1405018189}
+    - target: {fileID: 781651793244192298, guid: f1881539ab4905b4db48be9e1bb0feaf,
+        type: 3}
+      propertyPath: genCorn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 781651792810592264, guid: f1881539ab4905b4db48be9e1bb0feaf,
         type: 3}
       propertyPath: waitTimes.Array.size
@@ -1705,5 +1705,38 @@ PrefabInstance:
       propertyPath: cornGen
       value: 
       objectReference: {fileID: 1405018189}
+    - target: {fileID: 781651792810592264, guid: f1881539ab4905b4db48be9e1bb0feaf,
+        type: 3}
+      propertyPath: genCorn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 781651793475544817, guid: f1881539ab4905b4db48be9e1bb0feaf,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1364339332}
+    - target: {fileID: 781651792810592265, guid: f1881539ab4905b4db48be9e1bb0feaf,
+        type: 3}
+      propertyPath: m_Text
+      value: "For what it's worth, I've been feeling quite tired. \nI think not. I
+        think not. I've got all the time I need here. No one bothers me. No one bothers
+        at all. \nYou know the use. I'm waiting for Sis. She's stuck in the middle
+        realm.\nNot exactly. If I'm stuck, then you're stuck here with me.\nNo don't!
+        I can't stand the silence\u2026 \nThe field is my disease, friend. The wind
+        is my respirator. \nThat's funny, I've always found them to be very different.
+        \nDid Ruthie ever tell you the story of how I was discharged from the airforce?
+        \nWell as the story goes, I was manning the base at Fort Proud in 1942. \nJust
+        before a German bombing in July, I became inexplicably ill. \nThe asthma had
+        returned and I couldn't breathe for days. \nThey hooked me up to one of those
+        damned machines and I slept like a baby. \nThat night I saw Ruthie as a little
+        angel, and I saw a strange dark figure looming in the room. \nNow I recognize
+        who it was. \nIf you take the story at face value, then sure. \nMy will had
+        little to do with my survival. My genetics saved me. \nBut here's something
+        I never told anyone: the night before I got sick, I had a dream I died in
+        the bombing. \nI woke up covered in sweat and I had pissed myself again. \nI
+        said 10 Hail Mary's and prayed that my asthma would return. \nNo Ramin. He
+        has mercy for me. He cares. \nHahaha. Ahh. I don't know\u2026 I'm just having
+        fun while I can. \nAhem.. I think I'm ready\u2026 let's go home. "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1881539ab4905b4db48be9e1bb0feaf, type: 3}

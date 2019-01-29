@@ -53,7 +53,7 @@ public class HouseManager : MonoBehaviour
             rooms[1].SetActive(true);
         }
         //constant increment upward
-        else if(roomIndex < rooms.Count - 1)
+        else if(roomIndex < rooms.Count - 1 && roomIndex != 0)
         {
             rooms[roomIndex - 1].SetActive(false);
             rooms[roomIndex + 1].SetActive(true);

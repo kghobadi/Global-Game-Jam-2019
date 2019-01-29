@@ -12,32 +12,40 @@ public class Trigger : MonoBehaviour
     public bool newRoom = false;
     public int roomIndex;
 
+    //this is mainly for my porch madness but it could be used by others to get placement correct
+    public bool needsToBeRotated;
+    public GameObject hostRoom;
+
     //int colliderBool = 0;
 
     //public float playerEnterPosition, playerExitPosition;
 
-    public float timeToSwitch = 3f;
+    //switchTimer gets reset and counts down, timeToSwitch is total
+    public float switchTimer, timeToSwitch = 1f;
 
 
     void Start()
     {
         newRoom = false;
-        timeToSwitch = 3f;
-
-        if(roomIndex == 0)
-        {
-            timeToSwitch = 10;
-        }
+        switchTimer = timeToSwitch;
+        
         houseManager = GameObject.Find("houseMan").GetComponent<HouseManager>();
         doorWallObj = GameObject.FindGameObjectWithTag("DoorWall");
+
+        //rotates and sets position after houseMan
+        if (needsToBeRotated )
+        {
+            hostRoom.transform.localEulerAngles = new Vector3(0, 180, 0);
+            hostRoom.transform.localPosition = new Vector3(hostRoom.transform.localPosition.x, 2, -20);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            timeToSwitch -= Time.deltaTime;
-            if (timeToSwitch < 0 && !newRoom && !doorWallObj.GetComponent<MeshRenderer>().isVisible)
+            switchTimer -= Time.deltaTime;
+            if (switchTimer < 0 && !newRoom && !doorWallObj.GetComponent<MeshRenderer>().isVisible)
             {
                 houseManager.loadNewRoom(roomIndex);
                 newRoom = true;
@@ -45,6 +53,17 @@ public class Trigger : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        newRoom = false;
+        switchTimer = timeToSwitch;
+    }
+
+    void OnDisable()
+    {
+        newRoom = false;
+        switchTimer = timeToSwitch;
+    }
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -87,6 +106,6 @@ public class Trigger : MonoBehaviour
 
     //    }
     //}
-    
+
 
 }

@@ -26,4 +26,21 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        hasActivated = false;
+    }
+
+    void OnDisable()
+    {
+        if (hasActivated)
+        {
+            for (int i = 0; i < myDialogues.Length; i++)
+            {
+                myDialogues[i].DisableDialogue();
+            }
+        }
+       
+    }
+
 }

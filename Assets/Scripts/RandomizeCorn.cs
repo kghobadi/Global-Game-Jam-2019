@@ -37,14 +37,18 @@ public class RandomizeCorn : MonoBehaviour
         cornSource = GetComponent<AudioSource>();
 
         breatheDistance = 15;
+    }
 
+    void OnEnable()
+    {
         StartCoroutine(BreatheIn());
     }
-    
+
     void Update()
     {
         if(Vector3.Distance(transform.position, player.transform.position) < breatheDistance)
         {
+            Debug.Log("player near");
             if (lerpingUp)
             {
                 if (!cornSource.isPlaying)
@@ -82,6 +86,7 @@ public class RandomizeCorn : MonoBehaviour
 
     IEnumerator BreatheIn()
     {
+        Debug.Log("breathe in");
         lerpingDown = false;
 
         float randomWait = Random.Range(0.1f, 1);
