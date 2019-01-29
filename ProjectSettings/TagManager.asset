@@ -7,6 +7,13 @@ TagManager:
   - PhysicalPlane
   - House
   - Corn
+  - MaleHead
+  - MaleSuit
+  - Female_SkinForSkirt
+  - Female_TrouserSuit
+  - Female_SkirtSuit
+  - Female_SkinForTrousers
+  - DoorWall
   layers:
   - Default
   - TransparentFX
