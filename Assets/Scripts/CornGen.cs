@@ -31,7 +31,7 @@ public class CornGen : MonoBehaviour
 
         for (int h = 0; h < hitColliders.Length; h++)
         {
-            if (hitColliders[h].gameObject.tag == "House" || hitColliders[h].gameObject.tag == "Player")
+            if (hitColliders[h].gameObject.tag == "House" || hitColliders[h].gameObject.tag == "Player" || hitColliders[h].gameObject.tag == "Corn")
             {
                 canGenerate = false;
             }

@@ -38,10 +38,10 @@ public class DialogueText : MonoBehaviour
     public bool enableAtStart, lockPlayer;
 
     //audio stuff
-    public bool hasVoiceAudio, usesAllLetters;
+    public bool hasVoiceAudio, usesAllLetters, countsUp;
     public int speakFreq = 4;
     public AudioSource[] myVoices;
-    public int currentVoice;
+    public int currentVoice =0 , currentSound = 0;
     public AudioClip[] myGibberishSounds;
 
     //for spoken alphabet
@@ -49,12 +49,18 @@ public class DialogueText : MonoBehaviour
     public List<char> capitalLetters = new List<char>();
     public List<AudioClip> spokenSounds = new List<AudioClip>();
 
+    //animator
+    Animator speechAnimator;
+
+    public CornGen cornGen;
+
     void Start()
     {
         //grab refs
         player = GameObject.FindGameObjectWithTag("Player");
         fpc = player.GetComponent<FirstPersonController>();
         theText = GetComponent<Text>();
+        speechAnimator = hostObj.GetComponent<Animator>();
 
         ResetStringText();
        
@@ -72,8 +78,9 @@ public class DialogueText : MonoBehaviour
     //reset trigger if you swim away during dialogue
     void Update()
     {
-        if (isTyping  && !lockPlayer)
+        if (isTyping )
         {
+            //reeset if too far from dialogue
             if (Vector3.Distance(transform.position, player.transform.position) > resetDistance)
             {
                 StopAllCoroutines();
@@ -81,6 +88,12 @@ public class DialogueText : MonoBehaviour
                 GetComponent<DialogueTrigger>().hasActivated = false;
                 currentLine = 0;
             }
+
+            speechAnimator.SetBool("talking", true);
+        }
+        else
+        {
+            speechAnimator.SetBool("talking", false);
         }
     }
 
@@ -92,9 +105,10 @@ public class DialogueText : MonoBehaviour
         {
             DisableDialogue();
         }
-
         else
         {
+            //this debug helps find the wait times for the current line of dialogue
+            Debug.Log(hostObj.name + " is on line " + currentLine + " which reads: " + textLines[currentLine] + " -- " + hostObj.name + " will wait " + waitTimes[currentLine].ToString() + "sec before speaking again!");
             StartCoroutine(TextScroll(textLines[currentLine]));
         }
     }
@@ -111,8 +125,18 @@ public class DialogueText : MonoBehaviour
             theText.text += lineOfText[letter];
             if (hasVoiceAudio)
             {
-                if(letter % speakFreq == 0)
-                    Speak(lineOfText[letter]);
+                if (!countsUp)
+                {
+                    if (letter % speakFreq == 0)
+                        Speak(lineOfText[letter]);
+                }
+                else
+                {
+                    if (!myVoices[currentVoice].isPlaying)
+                    {
+                        PlaySoundUp();
+                    }
+                }
             }
             
             letter += 1;
@@ -172,6 +196,13 @@ public class DialogueText : MonoBehaviour
     public void DisableDialogue()
     {
         theText.enabled = false;
+
+        //bring the corn to life...
+        for (int i = 0; i < cornGen.corn.Count; i++)
+        {
+            cornGen.corn[i].GetComponent<RandomizeCorn>().breatheDistance = 50;
+        }
+
         hostObj.SetActive(false);
     }
 
@@ -208,21 +239,36 @@ public class DialogueText : MonoBehaviour
             //punctuation or other stuff?
             else
             {
-                PlaySound();
+                PlayRandomSound();
                 //Debug.Log("gibberish");
             }
         }
         //for characters who only use gibberish sounds
-        else
+        else 
         {
-            PlaySound();
+            PlayRandomSound();
             //Debug.Log("gibberish");
         }
 
     }
 
+    //counts up through gibberish sound array
+    public void PlaySoundUp()
+    {
+        if(currentSound < myGibberishSounds.Length - 1)
+        {
+            currentSound++;
+        }
+        else
+        {
+            currentSound = 0;
+        }
+
+        myVoices[currentVoice].PlayOneShot(myGibberishSounds[currentSound]);
+    }
+
     //to play a sound
-    public void PlaySound()
+    public void PlayRandomSound()
     {
         int randomSound = UnityEngine.Random.Range(0, myGibberishSounds.Length);
         myVoices[currentVoice].clip = myGibberishSounds[randomSound];

@@ -1836,7 +1836,6 @@ Transform:
   - {fileID: 781651794415453528}
   - {fileID: 781651794584761362}
   - {fileID: 781651794078813856}
-  - {fileID: 781651793475544829}
   m_Father: {fileID: 781651793186441944}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -4951,21 +4950,21 @@ MonoBehaviour:
   m_Text: "For what it's worth, I've been feeling quite tired. \nI think not. I think
     not. I've got all the time I need here. No one bothers me. No one bothers at all.
     \nYou know the use. I'm waiting for Sis. She's stuck in the middle realm.\nNot
-    exactly. If I'm stuck, then you're stuck here with me. \nThe field is my disease,
-    friend. The wind is my respirator. \nOh yeah? That's funny, I've always found
-    them to be very different. \nDid Ruth ever tell you the story of how I was discharged
-    from the airforce? \nWell as the story goes, I was manning the base at Fort Proud
-    in 1942. \nJust before a German bombing in July, I became inexplicably ill. \nThe
-    asthma had returned and I couldn't breathe for days. \nThey hooked me up to one
-    of those damned machines and I slept like a baby. \nThat night I saw Ruthie as
-    a little angel, and I saw a strange dark figure looming in the room. \nNow I recognize
-    who it was. \nIf you take the story at face value, then sure. \nMy will had little
-    to do with my survival. My genetics saved me. \nBut here's something I never told
-    anyone: the night before I got sick, I had a dream I died in the bombing. \nI
-    woke up covered in sweat and I had pissed myself again. \nI said 10 Hail Mary's
-    and prayed that my asthma would return. \nNo Ramin. He has mercy for me. He cares.
-    \nHahaha. Ahh. I don't know\u2026 I'm just having fun while I can. \nAhem.. I'm
-    think I'm ready\u2026 let's go home. "
+    exactly. If I'm stuck, then you're stuck here with me.\nNo don't! I can't stand
+    the silence\u2026 \nThe field is my disease, friend. The wind is my respirator.
+    \nThat's funny, I've always found them to be very different. \nDid Ruthie ever
+    tell you the story of how I was discharged from the airforce? \nWell as the story
+    goes, I was manning the base at Fort Proud in 1942. \nJust before a German bombing
+    in July, I became inexplicably ill. \nThe asthma had returned and I couldn't breathe
+    for days. \nThey hooked me up to one of those damned machines and I slept like
+    a baby. \nThat night I saw Ruthie as a little angel, and I saw a strange dark
+    figure looming in the room. \nNow I recognize who it was. \nIf you take the story
+    at face value, then sure. \nMy will had little to do with my survival. My genetics
+    saved me. \nBut here's something I never told anyone: the night before I got sick,
+    I had a dream I died in the bombing. \nI woke up covered in sweat and I had pissed
+    myself again. \nI said 10 Hail Mary's and prayed that my asthma would return.
+    \nNo Ramin. He has mercy for me. He cares. \nHahaha. Ahh. I don't know\u2026 I'm
+    just having fun while I can. \nAhem.. I'm think I'm ready\u2026 let's go home. "
 --- !u!114 &781651792810592264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4978,7 +4977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80f108430ba01c4aa05a08dc7da04bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hostObj: {fileID: 781651792740764797}
+  hostObj: {fileID: 781651794078813871}
   textLines: []
   currentLine: 0
   endAtLine: 0
@@ -4992,8 +4991,8 @@ MonoBehaviour:
   - 5
   - 6
   - 6
-  - 6
   - 5
+  - 5.5
   - 5
   - 4
   - 5
@@ -5016,31 +5015,26 @@ MonoBehaviour:
   lockPlayer: 0
   hasVoiceAudio: 1
   usesAllLetters: 0
-  speakFreq: 2
+  countsUp: 1
+  speakFreq: 8
   myVoices:
   - {fileID: 781651794170876655}
   - {fileID: 781651793737659787}
   - {fileID: 781651793066350183}
   - {fileID: 781651793003917395}
   currentVoice: 0
+  currentSound: 0
   myGibberishSounds:
-  - {fileID: 8300000, guid: 8c94b229cfffc354ba20f9b0aafeb399, type: 3}
-  - {fileID: 8300000, guid: c0b6241b6ae5f2c48be0f7bd501917f3, type: 3}
-  - {fileID: 8300000, guid: efb40b9aae56a1e4ab7ef162b853e3da, type: 3}
-  - {fileID: 8300000, guid: 48b299a5627ee494c87e906a9373ba07, type: 3}
-  - {fileID: 8300000, guid: b433c6027da34ea47b76956181827a66, type: 3}
-  - {fileID: 8300000, guid: 38ba3e815d55f954997455c9e8c95918, type: 3}
-  - {fileID: 8300000, guid: 33ab7261d223cb24592027f4e6173c06, type: 3}
-  - {fileID: 8300000, guid: 7976a290b6637f042997322e13e9bf9e, type: 3}
-  - {fileID: 8300000, guid: b4c7b9ca6d3622c40a30e258328763bb, type: 3}
-  - {fileID: 8300000, guid: 6883c7cf77c7ef8438028964f0c7d2d9, type: 3}
-  - {fileID: 8300000, guid: 16c93ec8cdadbf54a9acfe870a29abfe, type: 3}
-  - {fileID: 8300000, guid: cf4ead4f24ffac64192002c6da6aa061, type: 3}
-  - {fileID: 8300000, guid: 5105de29159666345bb5f2e831a9b70b, type: 3}
-  - {fileID: 8300000, guid: d70ed01069db4e042a2f805f8d9a805e, type: 3}
+  - {fileID: 8300000, guid: 44423d30998ea2543982c79540e2a111, type: 3}
+  - {fileID: 8300000, guid: 819f872e06e82e54cbec58e079529a60, type: 3}
+  - {fileID: 8300000, guid: 30309024e1de71c4585e3251678f2b2c, type: 3}
+  - {fileID: 8300000, guid: fc8c1747040d3dc409b11f31c5815487, type: 3}
+  - {fileID: 8300000, guid: 6dd69d2bf7a85d34db8ec79fc07110e3, type: 3}
+  - {fileID: 8300000, guid: 66af25b39104fed4eb71104dedeb2250, type: 3}
   letters: 
   capitalLetters: 
   spokenSounds: []
+  cornGen: {fileID: 0}
 --- !u!114 &781651792810592279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12177,7 +12171,7 @@ AudioSource:
   m_GameObject: {fileID: 781651793003917393}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243374550831437410, guid: 59051e9baf917bd40aef401777e48b80,
+  OutputAudioMixerGroup: {fileID: 243837827444455738, guid: 59051e9baf917bd40aef401777e48b80,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -13904,7 +13898,7 @@ AudioSource:
   m_GameObject: {fileID: 781651793066350181}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243374550831437410, guid: 59051e9baf917bd40aef401777e48b80,
+  OutputAudioMixerGroup: {fileID: 243837827444455738, guid: 59051e9baf917bd40aef401777e48b80,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -18976,20 +18970,20 @@ MonoBehaviour:
   typeSpeed: 0.05
   resetDistance: 500
   waitToStart: 1
-  timeUntilStart: 3
+  timeUntilStart: 4
   waitTime: 3
   conversational: 1
   waitTimes:
-  - 6
-  - 6
-  - 6
+  - 9
+  - 7
+  - 7
   - 5
   - 1
   - 5
-  - 5
-  - 4
-  - 8
-  - 9
+  - 7
+  - 7
+  - 28
+  - 22
   - 4
   - 5
   - 7
@@ -18997,24 +18991,27 @@ MonoBehaviour:
   lockPlayer: 0
   hasVoiceAudio: 1
   usesAllLetters: 0
-  speakFreq: 2
+  countsUp: 0
+  speakFreq: 6
   myVoices:
   - {fileID: 781651794573174284}
   - {fileID: 781651793851878766}
   - {fileID: 781651793337040305}
   - {fileID: 781651794096114053}
   currentVoice: 0
+  currentSound: 0
   myGibberishSounds:
-  - {fileID: 8300000, guid: 149ab90a07cc1324eba12658680dbcb4, type: 3}
-  - {fileID: 8300000, guid: 43cd2f4cbad0c764ab8e50c137932c16, type: 3}
-  - {fileID: 8300000, guid: ca95d8063d4c3fa439c2bc413490b7ea, type: 3}
-  - {fileID: 8300000, guid: 7cb878369a214284aa0ddb57d096db80, type: 3}
-  - {fileID: 8300000, guid: 198a38f4e35ae41458f62cad379d5f1a, type: 3}
-  - {fileID: 8300000, guid: b332f49d1c9a5cc46a3fca54e7ba32b0, type: 3}
-  - {fileID: 8300000, guid: dc5bbbfc92f12ec489c0bff469c0ab15, type: 3}
+  - {fileID: 8300000, guid: 7fc295f0649045a4fbd28174b03dc996, type: 3}
+  - {fileID: 8300000, guid: 7041a1c983e471a4e85b7e46af25145d, type: 3}
+  - {fileID: 8300000, guid: 1a0e4730a9e107f4b91ef6f30be127ca, type: 3}
+  - {fileID: 8300000, guid: 88552b27c6d612c498eae1ebafbe1ee0, type: 3}
+  - {fileID: 8300000, guid: be2e333849941c24c98ed76f353ff4a1, type: 3}
+  - {fileID: 8300000, guid: 318194c10c32d1f48950ad2cca59c556, type: 3}
+  - {fileID: 8300000, guid: b11a092d98a3f8449969a670a2d7fecd, type: 3}
   letters: 
   capitalLetters: 
   spokenSounds: []
+  cornGen: {fileID: 0}
 --- !u!114 &781651793244192297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27226,21 +27223,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781651793475544828}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.039229296, y: -0.039229296, z: -0.039229296}
+  m_LocalRotation: {x: -0.108975485, y: 0.57458323, z: 0.1511499, w: 0.7969519}
+  m_LocalPosition: {x: 0, y: 0, z: 0.33720732}
+  m_LocalScale: {x: -0.10760624, y: -0.10760625, z: -0.107606255}
   m_Children:
   - {fileID: 781651792810592278}
   - {fileID: 781651794170876654}
   - {fileID: 781651793737659786}
   - {fileID: 781651793066350182}
   - {fileID: 781651793003917394}
-  m_Father: {fileID: 781651792740764798}
-  m_RootOrder: 43
+  m_Father: {fileID: 781651794078813856}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.68}
+  m_AnchoredPosition: {x: 1.1418637, y: -0.8241163}
   m_SizeDelta: {x: 581, y: 327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &781651793475544817
@@ -30511,7 +30508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781651793593134430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.8, y: 0, z: 13.4}
+  m_LocalPosition: {x: -65.8, y: -1.5, z: 13.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 781651794024126380}
@@ -35400,7 +35397,7 @@ AudioSource:
   m_GameObject: {fileID: 781651793737659785}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243374550831437410, guid: 59051e9baf917bd40aef401777e48b80,
+  OutputAudioMixerGroup: {fileID: 243837827444455738, guid: 59051e9baf917bd40aef401777e48b80,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -48772,7 +48769,8 @@ Transform:
   m_LocalRotation: {x: 0.1511499, y: -0.79695183, z: 0.108975485, w: -0.5745832}
   m_LocalPosition: {x: -0.029, y: 1.112, z: 0.302}
   m_LocalScale: {x: 0.3645634, y: 0.3645634, z: 0.3645634}
-  m_Children: []
+  m_Children:
+  - {fileID: 781651793475544829}
   m_Father: {fileID: 781651792740764798}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 108.41901, z: -21.478}
@@ -52595,7 +52593,7 @@ AudioSource:
   m_GameObject: {fileID: 781651794170876653}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243374550831437410, guid: 59051e9baf917bd40aef401777e48b80,
+  OutputAudioMixerGroup: {fileID: 243837827444455738, guid: 59051e9baf917bd40aef401777e48b80,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

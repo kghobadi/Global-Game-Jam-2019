@@ -10,7 +10,7 @@ public class RandomizeCorn : MonoBehaviour
 
     bool lerpingUp, lerpingDown;
 
-    public float lerpSpeed;
+    public float lerpSpeed, breatheDistance;
 
     AudioSource cornSource;
 
@@ -36,12 +36,14 @@ public class RandomizeCorn : MonoBehaviour
 
         cornSource = GetComponent<AudioSource>();
 
+        breatheDistance = 15;
+
         StartCoroutine(BreatheIn());
     }
     
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) < 50)
+        if(Vector3.Distance(transform.position, player.transform.position) < breatheDistance)
         {
             if (lerpingUp)
             {

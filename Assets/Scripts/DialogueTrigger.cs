@@ -20,6 +20,8 @@ public class DialogueTrigger : MonoBehaviour
                 {
                     myDialogues[i].EnableDialogue();
                 }
+
+                hasActivated = true;
             }
         }
     }

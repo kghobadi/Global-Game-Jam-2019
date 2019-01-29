@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/kas porch.unity
     guid: b11ac30a9da7b1240a6ba1ca02ef2ea1
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 09aa30ba69b9b4a4483cc69341d9e3bb
   m_configObjects: {}
