@@ -36,13 +36,18 @@ public class FirstPersonController : MonoBehaviour
 
     public bool moving;
     public bool isGrabbed;
-    
+    public bool jumping;
+
+    //for jump
+    public int jumpFrameCounter, jumpFrameMax;
+    public float jumpSpeed;
 
     void Start()
     {
         player = GetComponent<CharacterController>();
         playerAudSource = GetComponent<AudioSource>();
         mouseLook = Camera.main.GetComponent<camMouseLook>();
+        jumping = false;
     }
 
     void Update()
@@ -112,7 +117,31 @@ public class FirstPersonController : MonoBehaviour
             movement = transform.rotation * movement;
             player.Move(movement * Time.deltaTime);
 
-            player.Move(new Vector3(0, -0.5f, 0));
+            //jump input
+            if (Input.GetKeyDown(KeyCode.Space) && !jumping)
+            {
+                jumpFrameCounter = 0;
+                jumping = true;
+            }
+
+            //apply jump
+            if (jumping)
+            {
+                Debug.Log("jumping");
+                jumpFrameCounter++;
+                player.Move(new Vector3(0, jumpSpeed * (jumpFrameMax - jumpFrameCounter) * Time.deltaTime, 0));
+                if (jumpFrameCounter > jumpFrameMax)
+                {
+                    jumping = false;
+                }
+            }
+            //fall + 'gravity'
+            else
+            {
+                player.Move(new Vector3(0, -0.5f, 0));
+            }
+
+            
 
             // quit
             if (Input.GetKeyDown(KeyCode.Escape))
