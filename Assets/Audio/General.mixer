@@ -11,6 +11,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 245431227037750470}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -26,6 +27,9 @@ AudioMixerController:
     - b52221f353ecd2143917141caf14758f
     - 012d7ea528093fa41b5a6eb2b3bf90e9
     - 0fe78745c27ba444cadf3ff2f8afbaeb
+    - de0998250b12cec48aee5e626b145b72
+    - f7a8571941aadce4ea01cad397da8941
+    - 5e253ba1f056df643a74844f3811c27a
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -39,7 +43,10 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 8eed51c63e6e9954dbcf0ea99893a97b
   m_Children:
+  - {fileID: 243538219340407674}
+  - {fileID: 243853134833444222}
   - {fileID: 243220611168534902}
+  - {fileID: 243135963619053674}
   m_Volume: 5a3211c148b49614dae689f8da1ca267
   m_Pitch: 17243a97544b01543a958bb7d0a76bb7
   m_Effects:
@@ -68,19 +75,39 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: General
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 571d0b6cad153f84abd26be112841959
   m_FloatValues:
     422568322f22be241a246492b6abd725: 1
+    4ca34172bd435ac4ba87303fc6c76e21: -19.928478
     5416f6c22988bf343aef70e9f0a6e98d: 2500
     af0684c3d8fbdd64e9aa7a2f2b7b7e5a: -5.3230715
     5d4f95969cf8c9b4d9dd1738206e017c: 4.648096
+    e25880e706100d440a2f837f2ea15787: -4.560346
     b7812788db0a26647afca13605eb77d3: 10.437403
     1f5665d8d1775944998afc846c347fb6: -0.08374829
     05b5c6be60a46404ab91d72d8b324578: 4.648096
     e4cca7ff9d3da6a45883b8b88a9f8d1b: 1
   m_TransitionOverrides: {}
+--- !u!243 &243135963619053674
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5e253ba1f056df643a74844f3811c27a
+  m_Children: []
+  m_Volume: 1fbd379307405b44cab316e1a21aaf7e
+  m_Pitch: 69e7d0b3a385fdb4b95f9c354f1fd33a
+  m_Effects:
+  - {fileID: 244319326396876846}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243149427146021798
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -196,6 +223,24 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243538219340407674
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ambience
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: de0998250b12cec48aee5e626b145b72
+  m_Children: []
+  m_Volume: e25880e706100d440a2f837f2ea15787
+  m_Pitch: 2225e9c2f459a6946b094cf00606c693
+  m_Effects:
+  - {fileID: 244215135600898430}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243837827444455738
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -210,6 +255,24 @@ AudioMixerGroupController:
   m_Pitch: c2a9ed75e948db14fb86a0a1f0135fc9
   m_Effects:
   - {fileID: 244116501055780446}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &243853134833444222
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: f7a8571941aadce4ea01cad397da8941
+  m_Children: []
+  m_Volume: 9d183502fa6b4214b9b4ff5065bb304a
+  m_Pitch: 882da9a1bfec03d4ba89df98845b6fda
+  m_Effects:
+  - {fileID: 244992683595828272}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -238,6 +301,34 @@ AudioMixerEffectController:
   m_EffectID: fce1151803191e54bb5667dff1c37601
   m_EffectName: Attenuation
   m_MixLevel: 1877698e4c4d4ea49bd1a15d32fe66c7
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244215135600898430
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 76f8c99b6147cbb4da94ee3e2bdeec2f
+  m_EffectName: Attenuation
+  m_MixLevel: 68180ca900211954b9394164e7e1ebe2
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244319326396876846
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 99c997a284a12d145a6aa95d23e1bcf5
+  m_EffectName: Attenuation
+  m_MixLevel: 52fc9af0f010bdf46ac94851c69ceb3a
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -330,3 +421,37 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &244992683595828272
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 63e17b1b06aab5c47896037ed254806d
+  m_EffectName: Attenuation
+  m_MixLevel: b8e719d3ed1fe494db50f70156ee0754
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &245431227037750470
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Kas
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: f656805d16184514c9d0f898935c10b2
+  m_FloatValues:
+    422568322f22be241a246492b6abd725: 1
+    5416f6c22988bf343aef70e9f0a6e98d: 2500
+    af0684c3d8fbdd64e9aa7a2f2b7b7e5a: -5.3230715
+    5d4f95969cf8c9b4d9dd1738206e017c: 4.648096
+    e25880e706100d440a2f837f2ea15787: -4.560346
+    b7812788db0a26647afca13605eb77d3: 10.437403
+    1f5665d8d1775944998afc846c347fb6: -0.08374829
+    05b5c6be60a46404ab91d72d8b324578: 4.648096
+    e4cca7ff9d3da6a45883b8b88a9f8d1b: 1
+  m_TransitionOverrides: {}
