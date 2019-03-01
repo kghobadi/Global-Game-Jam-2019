@@ -40,6 +40,12 @@ public class Trigger : MonoBehaviour
     public bool newFootsteps;
     public AudioClip[] myFootsteps;
 
+    //for changing doorwall material
+    public bool hasDoorMat;
+    GameObject doorwall;
+    public Material newWall;
+    Material originalWall;
+
     public enum AmbienceType
     {
         ALL, PIANO, DRONES,
@@ -80,7 +86,13 @@ public class Trigger : MonoBehaviour
                 ambienceNum = 2;
             }
         }
-       
+
+        //get door and original mat
+        if (hasDoorMat)
+        {
+            doorwall = GameObject.FindGameObjectWithTag("DoorWall");
+            originalWall = doorwall.GetComponent<MeshRenderer>().material;
+        }
         //originalSnap = generalMixer.FindSnapshot("General");
     }
 
@@ -116,6 +128,9 @@ public class Trigger : MonoBehaviour
                 houseManager.loadNewRoom(roomIndex);
                 newRoom = true;
             }
+
+            if (hasDoorMat)
+                doorwall.GetComponent<MeshRenderer>().material = newWall;
         }
     }
 
@@ -126,6 +141,8 @@ public class Trigger : MonoBehaviour
             originalSnap.TransitionTo(1f);
         }
 
+        if (hasDoorMat)
+            doorwall.GetComponent<MeshRenderer>().material = originalWall;
     }
 
     void OnEnable()
@@ -139,48 +156,5 @@ public class Trigger : MonoBehaviour
         newRoom = false;
         switchTimer = timeToSwitch;
     }
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        playerEnterPosition = transform.InverseTransformPoint(other.transform.position).y - transform.localPosition.x;// transform.InverseTransformPoint(other.transform.position).x;
-    //        Debug.Log(playerEnterPosition);
-
-
-    //        if (playerEnterPosition < transform.localPosition.x)
-    //            newRoom = true;
-    //        else
-    //            newRoom = false;
-
-    //        Debug.Log(newRoom);
-    //    }
-    //}
-
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        playerExitPosition = transform.InverseTransformPoint(other.transform.position).y - transform.localPosition.x;
-    //        Debug.Log(playerExitPosition);
-    //        if (newRoom)
-    //        {
-    //            if (playerEnterPosition < playerExitPosition)//(transform.InverseTransformPoint(other.transform.position).x > playerEnterPosition)
-    //            {
-    //                houseManager.loadNewRoom();
-    //            }
-    //        }
-    //        else
-    //        {
-    //            if (playerEnterPosition > playerExitPosition)//(transform.InverseTransformPoint(other.transform.position).x < playerEnterPosition)
-    //            {
-    //                houseManager.loadOldRoom();
-    //            }
-    //        }
-
-
-    //    }
-    //}
-
 
 }
